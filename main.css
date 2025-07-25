@@ -1,0 +1,782 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #a020f0;
+  margin: 0;
+  font-family: sans-serif;
+}
+.noticeoverlay img{
+    width: 100%;
+    height: 100vh;
+}
+
+.noticeoverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  flex-direction: column;
+}
+
+.noticeoverlay img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2; 
+  z-index: -1;
+}
+
+.alert-notice {
+  background-color: rgba(0, 0, 128, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.alert-notice h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: #40E0D0;
+  margin-bottom: 15px;
+}
+.alert-notice p{
+    color: white;
+    font-size: 1.5rem;
+}
+.alert-notice p a{
+    color: #00FFFF;
+    font-weight: bold;
+}
+.accept{
+    background-color: #FF7F50; 
+    color: #fff;
+    padding: 14px 28px;
+    margin-top: 5px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.accept::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, #00f, #0080ff, #00f);
+  opacity: 0.2;
+  transition: left 0.5s;
+  z-index: -1;
+}
+
+.accept:hover::before {
+  left: 0;
+}
+
+.accept:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 128, 0.4);
+}
+
+@media (max-width: 480px) {
+  .alert-notice {
+    padding: 20px 15px;
+  }
+
+  .alert-notice h2 {
+    font-size: 1.2rem;
+  }
+
+  .alert-notice p {
+    font-size: 0.9rem;
+  }
+}
+
+.main-bg {
+  background-image: url('./Bg-iamge/tambolaBg.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 20px;
+  max-width: 900px;
+  width: 100%;
+}
+
+
+.logo-section img {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  border: 10px solid #d08bdc;
+  background-color: white;
+}
+
+
+.text-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  gap: 15px;
+}
+
+.main-name {
+  background-color: #a020f0;
+  color: white;
+  font-size: 2rem;
+  padding: 15px 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.sub-name {
+  background: linear-gradient(to right, #4b0082, gold);
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 30px;
+  border: 2px solid lime;
+  border-radius: 6px;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+
+@media (max-width: 600px) {
+  .main-bg {
+    height: auto;
+    padding: 30px 15px;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .logo-section img {
+    width: 140px;
+    border-width: 6px;
+  }
+
+  .text-section {
+    width: 100%;
+  }
+
+  .main-name {
+    font-size: 1.5rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+  }
+
+  .sub-name {
+    font-size: 1rem;
+    padding: 8px 20px;
+    letter-spacing: 2px;
+  }
+}
+.all-color{
+    background-color: #a020f0;
+}
+/* Navigation bar */
+.nav-buttons {
+  display: flex;
+  justify-content: space-around;
+  background-color: #a020f0;
+  padding: 10px;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.nav-buttons button {
+  background: white;
+  color: #a020f0;
+  font-weight: bold;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#loginBtn{
+  display: flex;
+  justify-content: space-around;
+  background-color: #a020f0;
+  padding: 10px;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+#loginBtn {
+  background: white;
+  color: #a020f0;
+  font-weight: bold;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Login popup container */
+.loginpage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 320px;
+  background: linear-gradient(135deg, #0d0d0d, #1f1f1f);
+  border: 2px solid #f5c518;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+  border-radius: 15px;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+  padding: 30px 20px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.loginpage.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.loginpage .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.loginpage h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #f5c518;
+}
+
+.loginpage p {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #aaa;
+}
+
+.loginpage input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #2d2d2d;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.loginpage button {
+  width: 100%;
+  padding: 10px 12px;
+  background: #f5c518;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.loginpage button:hover {
+  background: #e2b007;
+}
+
+.ticket-status{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ticket-status button{
+    background-color: rgba(128, 0, 0, 0.5);
+    width: 100%;
+    color: white;
+    padding: 20px;
+}
+.date-timer {
+  background-color: #a020f0;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.date-timer h3 {
+  margin-bottom: 10px;
+}
+
+.timer {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+  color: white;
+  background-color: #a020f0;
+}
+
+.timer div {
+  text-align: center;
+}
+
+.timer span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: block;
+}
+
+.start-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #454545;
+  padding: 5px;
+  border-radius: 5px;
+}
+@media(max-width:600px){
+  .start-time{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+/* Floating Buttons */
+.floating-buttons {
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.share-btn, .chat-btn {
+  background-color: #ff6600;
+  color: white;
+  font-size: 18px;
+  padding: 10px 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .floating-buttons{
+    
+  }
+}
+
+/* Popup menu Overlay */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* ✅ Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* ✅ Popup Box */
+.popup-box {
+  background: #DE3163;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh; 
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; 
+}
+
+/* ✅ Input Field */
+.popup-box input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+/* ✅ Scrollable Grid */
+.popup-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 6px;
+  margin-bottom: 20px;
+  padding: 5px;
+  
+  overflow-y: auto;         
+  max-height: 45vh;         
+}
+
+/* ✅ Grid Item */
+.popup-grid div {
+  padding: 10px;
+  background: #eee;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.popup-grid div.selected {
+  background-color: #3498db;
+  color: white;
+}
+
+/* ✅ Book Button */
+#bookSelected {
+  background-color: #800080;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+#popupNumberGrid .booked {
+  background-color: yellow;
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+
+
+@media (max-width: 500px) {
+  .popup-box {
+    width: 95vw;
+    max-width: 95vw;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .popup-grid {
+    grid-template-columns: repeat(auto-fill, minmax(32px, 1fr));
+    max-height: 250px;
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .popup-grid div {
+    font-size: 12px;
+    padding: 8px 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .popup-box input,
+  .popup-box button {
+    font-size: 14px;
+    width: 100%;
+  }
+}
+/* tickets blocks */
+/* Container for all tickets */
+.ticket-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual Ticket Card */
+#ticketList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.ticket-box {
+  width: 320px;
+  background: white;
+  border: 5px solid #ff00cc;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  color: black;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+
+/* Hover effect */
+.ticket-box:hover {
+  transform: scale(1.03);
+}
+
+/* Top name/status bar */
+.ticket-name {
+  background: #a020f0;
+  color: white;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 8px 8px 0 0;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Grid layout for ticket */
+.ticket {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  border: 2px solid black;
+  width: 100%;
+}
+
+/* Each cell */
+.cell {
+  aspect-ratio: 1 / 1;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .ticket-section {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+}
+
+/* number calling design */
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); 
+  gap: 5px;
+  padding: 10px;
+}
+
+.board-grid div {
+  padding: 8px;
+  font-size: 16px;
+  text-align: center;
+  background: white;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #000;
+  border: 1px solid #aaa;
+  user-select: none;
+}
+
+.board-grid .called {
+  background-color: red;
+  color: white;
+}
+/* Tablet */
+@media (max-width: 768px) {
+  .board-grid {
+    grid-template-columns: repeat(8, 1fr); 
+  }
+
+  .board-grid div {
+    padding: 6px;
+    font-size: 14px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .board-grid {
+    grid-template-columns: repeat(6, 1fr); 
+  }
+
+  .board-grid div {
+    padding: 5px;
+    font-size: 12px;
+  }
+}
+
+
+.round-display {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25vw;
+  height: 25vw;
+  max-width: 150px;
+  max-height: 150px;
+  min-width: 80px;
+  min-height: 80px;
+  border-radius: 50%;
+  background-color: yellow;
+  color: #800080;
+  font-size: 6vw;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  border: 4px solid red;
+}
+#roundNumberDisplay {
+  display: none; 
+}
+/* 🔥 Pop Bounce Animation */
+.round-display.animate {
+  animation: popBounce 0.5s ease-in-out;
+}
+
+@keyframes popBounce {
+  0% {
+    transform: scale(0.5) translate(-50%, -50%);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) translate(-50%, -50%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+
+/* -----game winning board below----- */
+.winner-list {
+  width: 100vw;              
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 30px;
+}
+
+.winner-list > div {
+  width: 100%;               
+}
+
+.winner-list ul{
+  margin-top: 10px;
+  color: yellow;
+  font-weight: bold;
+}
+.winner-list h3 {
+  width: 100%;
+  display: block;
+  background-color:#000080;
+  color: white;
+  padding: 10px 16px;
+  margin: 0;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+}
+.ticketseach{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.ticketseach {
+  padding: 20px;
+  max-width: 500px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+/* Remove arrows from number input */
+.ticketseach input[type="number"]::-webkit-inner-spin-button,
+.ticketseach input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.ticketseach input[type="number"] {
+  -moz-appearance: textfield; 
+}
+
+/* Input Style */
+.ticketseach input[type="number"] {
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 60%;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.ticketseach input[type="number"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
+}
+
+/* Button Style */
+.ticketseach button {
+  padding: 12px 18px;
+  margin-left: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.ticketseach button:hover {
+  background-color: #0056b3;
+}
+
+/* -----Game over button----- */
+
+

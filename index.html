@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tumi Brother's Tambola Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="noticeoverlay" id="noticeoverlay">
+    <img src="./Bg-iamge/tambolaBg.jpg" alt="Background Image">
+    <div class="alert-notice" id="alert-notice">
+        <h2>!! ANNOUNCEMENT !!</h2>
+        <p>
+            Tambola is a legal game in India except in Assam and Odisha.<br>
+            This website is provided by starttambola.com and oncdigital.in certified. It's a legit website in terms<br>
+            of gaming results. Remember, starttambola.com is an app<br>
+            provider and not the owner of this app.<br>
+            <a href="#">Check certificate by clicking here</a>
+        </p>
+        <button class="accept" id="acceptt">I Accept</button>
+    </div>
+  </div>
+  <div class="all-color">
+    <!-- Top Section -->
+    <div class="main-bg">
+        <div class="content-wrapper">
+            <div class="logo-section">
+                <img src="./Bg-iamge/tambola-mainbg.png" alt="Tambola World">
+            </div>
+            <div class="text-section">
+                <div class="main-name">BROTHER'S Tambola</div>
+                <div class="sub-name">TAMBOLA GAME</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <button>Whatsapp</button>
+        <button>Agent list</button>
+        <button>Call</button>
+        <button id="loginBtn" type="button">Login</button>
+        <div class="loginpage" id="loginPage">
+            <span class="close">&times;</span>
+            <form>
+                <h3>Login to Game controls</h3>
+                <p>For admins</p>
+                <input type="text" placeholder="Username" required />
+                <input type="password" placeholder="Password" required />
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="ticket-status">
+        <button id="availableTicketsBtn">Check Available Tickets</button>
+        <div class="popup-overlay" id="popupOverlay">
+            <div class="popup-box">
+                <h2>Booking Dashboard</h2>
+                <input type="text" id="popupUsername" placeholder="Enter your name" />
+                <div id="popupNumberGrid" class="popup-grid"></div>
+                <button id="bookSelected">Book</button>
+                <button id="closePopup">Close</button>
+            </div>
+        </div>
+
+     </div>
+    <div class="timer">
+        <div><span id="days">00</span><label>Days</label></div>
+        <div><span id="hours">00</span><label>Hours</label></div>
+        <div><span id="minutes">00</span><label>Minutes</label></div>
+        <div><span id="seconds">00</span><label>Seconds</label></div>
+    </div>
+    <div class="start-time" id="startTimeDisplay">--</div>
+
+
+    <div class="ticket-section" id="ticketSection">
+        <div id="ticketList"></div>
+    </div>
+    <div id="gameplayArea" style="display: none;">
+        <div id="roundNumberDisplay" class="round-display">--</div>
+        <div id="lastCalledNumber" style="text-align: center; margin-top: 10px; font-size: 24px;"></div>
+        <div id="callerBoard" class="board-grid"></div>
+        <div class="ticketseach">
+            <input type="number" id="ticketSearchInput" placeholder="Enter ticket number" />
+            <button onclick="showBookingAndTickets(document.getElementById('ticketSearchInput').value)">Search</button>
+            <div id="resultDisplay"></div>
+        </div>
+        <div id="winnerList" class="winner-list">
+            <div id="fullHouse">
+                <h3>Full House</h3>
+                <ul></ul>
+            </div>
+            <div id="secondHouse">
+                <h3>Second House</h3>
+                <ul></ul>
+            </div>
+            <div id="topLine">
+                <h3>Top Line</h3>
+                <ul></ul>
+            </div>
+            <div id="middleLine">
+                <h3>Middle Line</h3>
+                <ul></ul>
+            </div>
+            <div id="bottomLine">
+                <h3>Bottom Line</h3>
+                <ul></ul>
+            </div>
+            <div id="quick5">
+                <h3>Quick Five</h3>
+                <ul></ul>
+            </div>
+            <div id="star">
+                <h3>Star</h3>
+                <ul></ul>
+            </div>
+             <div id="fullSheet">
+                <h3>full sheet</h3>
+                <ul></ul>
+            </div>
+            <div id="fullSheetBonus">
+                <h3>Full Sheet Bonus</h3>
+                <ul></ul>
+            </div>
+
+             <div id="halfSheet">
+                <h3>Half Sheet</h3>
+                <ul></ul>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Floating Share and Chat Buttons -->
+    <div class="floating-buttons">
+        <div class="share-btn">🔗</div>
+        <div class="chat-btn">💬</div>
+    </div>
+  </div>
+<script type="module" src="main.js"></script>
+</body>
+</html>

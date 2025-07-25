@@ -1,0 +1,418 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #5df4f4;
+}
+
+/* Profile Icon & Popup Menu */
+.profile {
+  position: relative;
+  margin: 30px;
+}
+
+#profileIcon {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 30px;
+  margin-left: 30px;
+  background: none;
+  border: 0;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.popup-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  z-index: 1000;
+  width: 200px;
+  max-width: 90vw;
+}
+
+.popup-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popup-menu li {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.popup-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+.popup-menu li:last-child {
+  border-bottom: none;
+}
+
+/* Main layout container */
+.all-in-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background: #001f5c;
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h2 {
+  margin: 10px 0 20px;
+  font-size: 20px;
+}
+
+/* Game settings table */
+.settings-table {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  flex: 1;
+  text-align: left;
+}
+
+.value {
+  flex: 1;
+  text-align: right;
+}
+
+input, select {
+  padding: 6px;
+  border-radius: 4px;
+  border: none;
+  width: 90%;
+  max-width: 200px;
+}
+
+/* Buttons */
+.create-btn {
+  margin-top: 20px;
+  background: blue;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.start-game {
+  margin-top: 20px;
+  background: green;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.reset-game {
+  margin-top: 20px;
+  background: red;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.ctr-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Booking Slider */
+#bookingSlider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 80%;
+  background-color: white;
+  z-index: 9999;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in-out;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+}
+
+#bookingSlider.active {
+  transform: translateX(0);
+}
+
+.slider-content {
+  padding: 20px;
+  position: relative;
+}
+
+#closeSliderBtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: red;
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 6px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.request-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f0f0f0;
+  padding: 12px 16px;
+  margin: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  gap: 20px;
+}
+
+.request-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.accept-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.decline-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.request-info {
+  font-weight: bold;
+  font-size: 14px;
+  flex: 1;
+}
+
+/* Confirm Start Popup */
+.custom-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: #0080ff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  max-width: 90%;
+  width: 300px;
+  animation: popupIn 0.3s ease;
+}
+
+.popup-content h2 {
+  margin-bottom: 10px;
+}
+
+#confirmStart {
+  padding: 8px 16px;
+  background-color: #00ff40;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#confirmStart:hover {
+  background-color: #00ff00;
+}
+
+.close-btn {
+  padding: 8px 16px;
+  background-color: #ff4747;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background-color: #d93737;
+}
+
+@keyframes popupIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* -------- GAME SETTINGS SECTION -------- */
+.gameSettingcontainer {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings-box {
+  width: 100%;
+  max-width: 650px;
+  background: #f8f8f8;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.toggle-btn {
+  padding: 5px 15px;
+  background: #ccc;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-btn.active {
+  background: #4caf50;
+  color: white;
+}
+
+.confirm-btn {
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  #profileIcon {
+    margin-left: 10px;
+    font-size: 32px;
+  }
+
+  .popup-menu {
+    top: 50px;
+    left: 10px;
+    width: auto;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .label, .value {
+    width: 100%;
+    text-align: left;
+  }
+
+  input, select {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .create-btn,
+  .start-game,
+  .reset-game {
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+  }
+
+  .settings-box {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .toggle-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toggle-btn,
+  .confirm-btn {
+    width: 100%;
+  }
+}

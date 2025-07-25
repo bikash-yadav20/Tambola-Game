@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Tambola - Game Settings</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="adminPanel.css">
+</head>
+<body>
+  <div class="profile" id="proFile">
+    <button class="fa-solid fa-circle-user" id="profileIcon"></button>
+
+    <div class="popup-menu" id="popupMenu">
+      <ul>
+        <li id="openSliderBtn">📖 Accept Bookings</li>
+        <li>👤 Account Details</li>
+        <li>🔐 Change Password</li>
+        <li>🚪 Logout</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Popup Overlay -->
+<!-- Booking Slider (overlay popup) -->
+<div id="bookingSlider">
+  <div class="slider-content">
+    <button id="closeSliderBtn">✕</button>
+    <h2>Booking Requests</h2>
+    <!-- ✅ buttons and user data inserted by JS -->
+    <div id="requestList"></div>
+  </div>
+</div>
+
+  <!-- ---------- -->
+
+  <div class="all-in-container">
+    <div class="container">
+      <h1>ONLINE TAMBOLA</h1>
+      <h2>ADMIN CONTROLS</h2>
+      <div class="settings-table">
+        <div class="row">
+          <div class="label">Game date-time</div>
+          <div class="value"><input type="datetime-local" /></div>
+        </div>
+        <div class="row">
+          <div class="label">Total ticket limit (within 600)</div>
+          <div class="value" id="ticketcount"><input id="ticketInput" type="number" value="" /></div>
+        </div>
+        <div class="row">
+          <div class="label">Ticket price</div>
+          <div class="value"><input type="number" value="" /></div>
+        </div>
+        <div class="row">
+          <div class="label">Agent commission</div>
+          <div class="value"><input type="number" value="" /></div>
+        </div>
+        <div class="row">
+          <div class="label">Settings type</div>
+          <div class="value">
+            <select>
+              <option>INR</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="label">Website status</div>
+          <div class="value">
+            <select>
+              <option>WE ARE OPEN</option>
+              <option>WE ARE CLOSED</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="label">Booking status</div>
+          <div class="value">
+            <select>
+              <option>BOOKING OPEN</option>
+              <option>BOOKING CLOSED</option>
+            </select>
+          </div>
+        </div>
+      </div>
+        <div class="ctr-btns">
+          <button class="create-btn">CREATE NEW GAME</button>
+          <button class="start-game" id="startGameButton">START GAME</button>
+          <button class="reset-game" id="resetGameButton">RESET GAME</button>
+        </div>
+
+    </div>
+  </div>
+  <!-- 📦 Game Settings Container -->
+<div class="gameSettingcontainer">
+    <div id="gameSettings" class="settings-box">
+      <h2>Game Settings</h2>
+
+      <div class="toggle-row">
+        <label>Quick 5</label>
+        <button class="toggle-btn" data-mode="quick5">OFF</button>
+      </div>
+
+      <div class="toggle-row">
+        <label>Top Line</label>
+        <button class="toggle-btn" data-mode="topLine">OFF</button>
+      </div>
+
+      <div class="toggle-row">
+        <label>Middle Line</label>
+        <button class="toggle-btn" data-mode="middleLine">OFF</button>
+      </div>
+
+      <div class="toggle-row">
+        <label>Bottom Line</label>
+        <button class="toggle-btn" data-mode="bottomLine">OFF</button>
+      </div>
+
+      <div class="toggle-row">
+        <label>1st House</label>
+        <button class="toggle-btn" data-mode="fullHouse">OFF</button>
+      </div>
+
+      <div class="toggle-row">
+        <label>2nd House</label>
+        <button class="toggle-btn" data-mode="secondHouse">OFF</button>
+      </div>
+      <div class="toggle-row">
+        <label>full-sheet</label>
+        <button class="toggle-btn" data-mode="fullSheet">OFF</button>
+      </div>
+      <div class="toggle-row">
+        <label>Half-sheet</label>
+        <button class="toggle-btn" data-mode="halfSheet">OFF</button>
+      </div>
+      <div class="toggle-row">
+        <label>Star</label>
+        <button class="toggle-btn" data-mode="star">OFF</button>
+      </div>
+      <button id="setGameBtn" class="confirm-btn">Set Game</button>
+    </div>
+</div>
+  <script type="module" src="adminPanel.js"></script>
+</body>
+</html>
+
